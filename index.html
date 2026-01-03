@@ -228,38 +228,46 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="contact-subtitle">
-                Let's discuss your business needs. I work directly with clients—no middlemen, clear communication, and practical solutions.
-            </p>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone / WhatsApp</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Tell me about your business needs</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-large">Send Message</button>
-            </form>
-            <div class="contact-alternative">
-                <p><strong>Prefer to reach out directly?</strong></p>
-                <p>Email: <a href="mailto:anushkajamkar@gmail.com" class="contact-link">anushkajamkar@gmail.com</a></p>
-                <p>Phone / WhatsApp: <a href="https://wa.me/918308012745" class="contact-link">8308012745</a></p>
-            </div>
-        </div>
-    </section>
+    <form class="contact-form"
+      id="contactForm"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thank-you.html">
+
+    <input type="hidden" name="form-name" value="contact">
+
+    <p style="display:none;">
+        <label>
+            Don’t fill this out if you’re human: <input name="bot-field">
+        </label>
+    </p>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone / WhatsApp</label>
+        <input type="tel" id="phone" name="phone" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Tell me about your business needs</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-large">
+        Send Message
+    </button>
+</form>
 
     <!-- Footer -->
     <footer class="footer">
