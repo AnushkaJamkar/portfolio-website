@@ -1,3 +1,43 @@
+// Hamburger menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navOverlay = document.createElement('div');
+    navOverlay.className = 'nav-overlay';
+    document.body.appendChild(navOverlay);
+
+    function toggleMenu() {
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+    }
+
+    // Close menu when clicking overlay
+    navOverlay.addEventListener('click', function() {
+        hamburger.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close menu when clicking a link
+    const navLinksItems = navLinks.querySelectorAll('a');
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+});
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
