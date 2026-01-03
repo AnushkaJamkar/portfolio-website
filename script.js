@@ -52,56 +52,56 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+// // Contact form handling
+// const contactForm = document.getElementById('contactForm');
+// if (contactForm) {
+//     contactForm.addEventListener('submit', function(e) {
+//         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(this);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            message: formData.get('message')
-        };
+//         // Get form data
+//         const formData = new FormData(this);
+//         const data = {
+//             name: formData.get('name'),
+//             email: formData.get('email'),
+//             phone: formData.get('phone'),
+//             message: formData.get('message')
+//         };
         
-        // Here you would typically send this to your backend
-        // For now, we'll just show a success message
-        console.log('Form submission:', data);
+//         // Here you would typically send this to your backend
+//         // For now, we'll just show a success message
+//         console.log('Form submission:', data);
         
-        // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'form-success';
-        successMessage.style.cssText = `
-            background-color: #10b981;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            text-align: center;
-        `;
-        successMessage.textContent = 'Thank you! We\'ll get back to you soon.';
+//         // Show success message
+//         const successMessage = document.createElement('div');
+//         successMessage.className = 'form-success';
+//         successMessage.style.cssText = `
+//             background-color: #10b981;
+//             color: white;
+//             padding: 1rem;
+//             border-radius: 8px;
+//             margin-top: 1rem;
+//             text-align: center;
+//         `;
+//         successMessage.textContent = 'Thank you! We\'ll get back to you soon.';
         
-        // Remove any existing success message
-        const existing = this.querySelector('.form-success');
-        if (existing) {
-            existing.remove();
-        }
+//         // Remove any existing success message
+//         const existing = this.querySelector('.form-success');
+//         if (existing) {
+//             existing.remove();
+//         }
         
-        this.appendChild(successMessage);
-        this.reset();
+//         this.appendChild(successMessage);
+//         this.reset();
         
-        // Scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+//         // Scroll to success message
+//         successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         
-        // Remove success message after 5 seconds
-        setTimeout(() => {
-            successMessage.remove();
-        }, 5000);
-    });
-}
+//         // Remove success message after 5 seconds
+//         setTimeout(() => {
+//             successMessage.remove();
+//         }, 5000);
+//     });
+// }
 
 // Add subtle scroll animations (optional, can be removed if too flashy)
 const observerOptions = {
